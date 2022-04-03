@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
   Post.findAll({
     include: {
       model: User,
-      attributes: { exclude: 'password' },
+      attributes: { exclude: ['password'] },
     },
   })
     .then((postData) => {
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: { id: req.params.id },
-    include: { model: User, attributes: { exclude: 'password' } },
+    include: { model: User, attributes: { exclude: ['password'] } },
   }).then((postData) => {
     if (!postData) {
       res.status(400).json({ message: 'No Post found with that ID!' });
