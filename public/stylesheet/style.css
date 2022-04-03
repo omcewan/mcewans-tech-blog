@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 80px;
+  background-color: #05D1F0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
