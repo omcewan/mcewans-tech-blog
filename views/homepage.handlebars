@@ -1,7 +1,13 @@
-<ol class="post-list">
+<ol class='post-list'>
   <li>
-    <div>
-      <div class="post-title"></div>
-    </div>
+    {{#each posts}}
+      <div class='post'>
+        <div class='post-title'>
+          <p>Title: {{title}}</p>
+          <p>Posted By: {{user.username}} on {{createdAt}}</p>
+        </div>
+        <p class='post-contents'>{{post_contents}}</p>
+      </div>
+    {{/each}}
   </li>
 </ol>
