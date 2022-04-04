@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  padding: 20px;
 }
 .app-title {
   color: var(--primary)
@@ -57,7 +58,16 @@ div .post-title {
   padding: 10px;
 }
 
+.title {
+  font-size: large;
+}
+
+.posted-by {
+  font-size: small;
+}
+
 .post-contents {
   margin: 10px;
-  color: var(--dark)
+  color: var(--dark);
+  font-size: larger;
 }
