@@ -17,28 +17,6 @@ body {
   background-color: var(--primary);
 }
 
-.hero {
-  height: 80px;
-  background-color: var(--dark);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.app-title {
-  color: var(--primary);
-}
-
-/* nav a {
-  color: var(--primary);
-} */
-
-/* .navbar {
-  background-color: var(--dark);
-} */
-
 ol {
   list-style: none;
   display: flex;
@@ -47,55 +25,6 @@ ol {
   margin: 0 100px;
 }
 
-div .post {
-  border: solid;
-  display: flex;
-  flex-flow: column wrap;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-div .post-title {
-  color: var(--primary);
-  background-color: var(--dark);
-  border-bottom: solid;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.title {
-  font-size: 24px;
-}
-
-.posted-by {
-  font-size: 16px;
-}
-
-.post-contents {
-  padding: 20px;
-  color: var(--dark);
-  font-size: 24px;
-}
-
-.form-title {
-  color: var(--primary);
-  background-color: var(--dark);
-  border-bottom: solid;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* padding: 10px; */
-}
-
-/* .form-element {
-  flex-flow: column;
-  display: flex;
-} */
-
-.login {
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: column wrap;
-  margin: 0 100px;
-  border: solid
+.card {
+  margin: 10px 0 10px 0;
 }
