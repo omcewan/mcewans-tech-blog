@@ -31,9 +31,13 @@ body {
   color: var(--primary);
 }
 
-nav a {
+/* nav a {
   color: var(--primary);
-}
+} */
+
+/* .navbar {
+  background-color: var(--dark);
+} */
 
 ol {
   list-style: none;

@@ -1,13 +1,15 @@
 <ol>
-    {{#each posts}}
   <li>
-      <div class='post'>
-        <div class='post-title'>
-          <p class="title">Title: {{title}}</p>
-          <p class="posted-by">Posted By: {{user.username}} on {{createdAt}}</p>
+    {{#each posts}}
+      <div class='card'>
+        <div class='card-header'>
+          <p class='title'>Title: {{title}}</p>
         </div>
-        <p class='post-contents'>{{post_contents}}</p>
+        <div class='card-body'>
+          <p class='posted-by'>Posted By: {{user.username}} on {{createdAt}}</p>
+          <p class='card-text'>{{post_contents}}</p>
+        </div>
       </div>
-  </li>
     {{/each}}
+  </li>
 </ol>
