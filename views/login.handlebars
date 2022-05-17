@@ -1,42 +1,39 @@
 <form class='row align-self-center justify-content-around'>
-  <div class='col-4'>
+  <div class='col-4 login-form'>
     <div class='mb-3'>
-      <label for='exampleInputEmail1' class='form-label'>Email address</label>
+      <label for='email' class='form-label'>Email address</label>
       <input
         type='email'
         class='form-control'
-        id='exampleInputEmail1'
+        id='login-email'
         aria-describedby='emailHelp'
       />
-      <div id='emailHelp' class='form-text'>We'll never share your email with
-        anyone else.</div>
     </div>
     <div class='mb-3'>
-      <label for='exampleInputPassword1' class='form-label'>Password</label>
-      <input type='password' class='form-control' id='exampleInputPassword1' />
+      <label for='password' class='form-label'>Password</label>
+      <input type='password' class='form-control' id='login-password' />
     </div>
-    <button type='submit' class='btn btn-primary'>Submit</button>
+    <button type='submit' class='btn btn-primary login-btn'>Login</button>
   </div>
-  <div class='col-4'>
+  <div class='col-4 signup-form'>
     <div class='mb-3'>
-      <label for='exampleInputPassword1' class='form-label'>Username</label>
-      <input type='password' class='form-control' id='exampleInputPassword1' />
+      <label for='username' class='form-label'>Username</label>
+      <input type='username' class='form-control' id='signup-username' />
     </div>
     <div class='mb-3'>
-      <label for='exampleInputEmail1' class='form-label'>Email address</label>
+      <label for='email' class='form-label'>Email address</label>
       <input
         type='email'
         class='form-control'
-        id='exampleInputEmail1'
+        id='signup-email'
         aria-describedby='emailHelp'
       />
-      <div id='emailHelp' class='form-text'>We'll never share your email with
-        anyone else.</div>
     </div>
     <div class='mb-3'>
-      <label for='exampleInputPassword1' class='form-label'>Password</label>
-      <input type='password' class='form-control' id='exampleInputPassword1' />
+      <label for='password' class='form-label'>Password</label>
+      <input type='password' class='form-control' id='signup-password' />
     </div>
-    <button type='submit' class='btn btn-primary'>Submit</button>
+    <button type='submit' class='btn btn-primary signup-btn'>Sign Up</button>
   </div>
 </form>
+<script src='/javascript/login.js'></script>
