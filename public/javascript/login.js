@@ -11,7 +11,6 @@ async function loginFormHandler(event) {
     });
     if (response.ok) {
       window.location.replace('/');
-      console.log(response);
     } else {
       alert(response.statusText);
     }
@@ -32,7 +31,6 @@ async function signupFormHandler(event) {
     });
     if (response.ok) {
       window.location.replace('/');
-      console.log(response);
     } else {
       alert(response.statusText);
     }

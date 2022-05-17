@@ -2,11 +2,28 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const routes = require('./controllers')
+const routes = require('./controllers');
 const path = require('path');
-const exphbs = require('express-handlebars')
-const hbs = exphbs.create({})
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 const sequelize = require('./config/connection');
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+require('dotenv').config();
+
+// set up sess options
+const sess = {
+  secret: process.env.SESS_SECRET,
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+// set up express to uses session
+app.use(session(sess));
 
 // set up template engine
 app.engine('handlebars', hbs.engine);
@@ -18,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on routes
-app.use(routes)
+app.use(routes);
 
 // turn on the connection to db and server
 sequelize.sync({ force: false }).then(() => {
