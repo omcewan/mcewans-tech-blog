@@ -5,7 +5,7 @@ const { User, Post } = require('../../models');
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
-    include: {model: Post}
+    include: { model: Post },
   })
     .then((usersData) => {
       res.json(usersData);
@@ -45,7 +45,13 @@ router.post('/', (req, res) => {
     password: req.body.password,
   })
     .then((newUserData) => {
-      res.json(newUserData);
+      req.session.save(() => {
+        req.session.user_id = newUserData.id;
+        req.session.usernmae = newUserData.username;
+        req.session.loggedIn = true;
+
+        res.json(newUserData);
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -109,7 +115,13 @@ router.use('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-    res.json({ user: loginUserData, message: 'You are now logged in!' });
+    req.session.save(() => {
+      req.session.user_id = loginUserData.id;
+      req.session.username = loginUserData.usename;
+      req.session.loggedIn = true;
+
+      res.json({ user: loginUserData, message: 'You are now logged in!' });
+    });
   });
 });
 

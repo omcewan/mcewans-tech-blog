@@ -3,6 +3,7 @@ const sequlize = require('../config/connection');
 const { User, Post } = require('../models');
 
 router.get('/', (req, res) => {
+  console.log(req.session)
   Post.findAll({
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
     include: { model: User, attributes: ['username']},
