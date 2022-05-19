@@ -32,3 +32,7 @@ ol {
 .card {
   margin: 10px 0 10px 0;
 }
+
+#logout {
+  margin-top: 2px;
+}

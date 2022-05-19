@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     include: { model: User, attributes: ['username'] },
   }).then((postData) => {
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render('homepage', { posts });
+    res.render('homepage', { posts, loggedIn: req.session.loggedIn });
   });
 });
 
