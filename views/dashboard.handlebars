@@ -1,6 +1,6 @@
 <div class='row'>
-  <h2>Add New Post</h2>
   <form class='col-3'>
+    <h2>New Post</h2>
     <div class='mb-3'>
       <label for='postTitle' class='form-label'>Title</label>
       <input type='input' class='form-control' id='post-title' />
@@ -12,6 +12,7 @@
     <button type='submit' class='btn btn-primary post-btn'>Add Post</button>
   </form>
   <ol class='col'>
+    <h2>Your Posts</h2>
     <li>
       {{#each posts}}
         <div class='card'>
@@ -30,3 +31,4 @@
     </li>
   </ol>
 </div>
+<script src='/javascript/add-post.js'></script>
