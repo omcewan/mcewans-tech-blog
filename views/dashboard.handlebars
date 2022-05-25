@@ -1,8 +1,32 @@
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Title</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Contents</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class='row'>
+  <h2>Add New Post</h2>
+  <form class='col-3'>
+    <div class='mb-3'>
+      <label for='postTitle' class='form-label'>Title</label>
+      <input type='input' class='form-control' id='post-title' />
+    </div>
+    <div class='mb-3'>
+      <label for='postContents' class='form-label'> Post Contents</label>
+      <textarea class='form-control' id='post-contents' rows='3'></textarea>
+    </div>
+    <button type='submit' class='btn btn-primary post-btn'>Add Post</button>
+  </form>
+  <ol class='col'>
+    <li>
+      {{#each posts}}
+        <div class='card'>
+          <div class='card-header'>
+            <p class='title'>Title: {{title}}</p>
+          </div>
+          <div class='card-body'>
+            <p class='posted-by'>Posted By:
+              {{user.username}}
+              on
+              {{createdAt}}</p>
+            <p class='card-text'>{{post_contents}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </li>
+  </ol>
 </div>
