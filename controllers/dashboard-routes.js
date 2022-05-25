@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const sequlize = require('../config/connection');
 const { User, Post } = require('../models');
-const withAuth = require('../utils/auth')
+const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
   Post.findAll({
     // use the ID from the session
-    where: { id: req.session.user_id },
+    where: { user_id: req.session.user_id },
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
     include: { model: User, attributes: ['username'] },
   })
