@@ -3,7 +3,9 @@
     {{#each posts}}
       <div class='card'>
         <div class='card-header'>
-          <p class='title'>Title: {{title}}</p>
+          <a href='/post/{{id}}'>
+            <p class='title'>Title: {{title}}</p>
+          </a>
         </div>
         <div class='card-body'>
           <p class='posted-by'>Posted By: {{user.username}} on {{createdAt}}</p>
