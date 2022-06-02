@@ -14,7 +14,22 @@
 }
 
 body {
-  background-color: var(--primary);
+  background-color: dimgrey;
+}
+
+.navbar {
+  background: cornflowerblue;
+  height: 100;
+}
+
+.navbar-brand h1 {
+  font-size: xxx-large;
+  /* color: var(--primary) */
+  color: floralwhite;
+}
+
+.nav-link {
+  font-size: x-large;
 }
 
 main {
@@ -26,11 +41,34 @@ ol {
   display: flex;
   justify-content: space-evenly;
   flex-flow: column wrap;
-  margin: 0 100px;
+  margin: 0 50px;
+  padding: 0px;
+}
+
+.card-header {
+  background: cornflowerblue;
+  /* border-top-right-radius: 10px;
+  border-top-left-radius: 10px; */
+}
+
+.card-header a {
+  color: floralwhite;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+.card-body {
+  background-color: gainsboro;
+}
+
+.card-body p {
+  font-size: 18px;
 }
 
 .card {
   margin: 10px 0 10px 0;
+  border: none;
+  background: none;
 }
 
 #logout {
