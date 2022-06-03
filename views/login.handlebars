@@ -1,39 +1,50 @@
 <form class='row align-self-center justify-content-around'>
-  <div class='col-4 login-form'>
-    <div class='mb-3'>
-      <label for='email' class='form-label'>Email address</label>
-      <input
-        type='email'
-        class='form-control'
-        id='login-email'
-        aria-describedby='emailHelp'
-      />
+  <div class='card col-4 login-form'>
+    <div class='card-header'>
+      <p class='title'>Login</p>
     </div>
-    <div class='mb-3'>
-      <label for='password' class='form-label'>Password</label>
-      <input type='password' class='form-control' id='login-password' />
+    <div class='card-body'>
+      <div class='mb-3'>
+        <label for='email' class='form-label'>Email address</label>
+        <input
+          type='email'
+          class='form-control'
+          id='login-email'
+          aria-describedby='emailHelp'
+        />
+      </div>
+      <div class='mb-3'>
+        <label for='password' class='form-label'>Password</label>
+        <input type='password' class='form-control' id='login-password' />
+      </div>
+      <button type='submit' class='btn btn-primary login-btn'>Login</button>
     </div>
-    <button type='submit' class='btn btn-primary login-btn'>Login</button>
   </div>
-  <div class='col-4 signup-form'>
-    <div class='mb-3'>
-      <label for='username' class='form-label'>Username</label>
-      <input type='username' class='form-control' id='signup-username' />
+
+  <div class='card col-4 signup-form'>
+    <div class='card-header'>
+      <p class='title'>Sign Up</p>
     </div>
-    <div class='mb-3'>
-      <label for='email' class='form-label'>Email address</label>
-      <input
-        type='email'
-        class='form-control'
-        id='signup-email'
-        aria-describedby='emailHelp'
-      />
+    <div class='card-body'>
+      <div class='mb-3'>
+        <label for='username' class='form-label'>Username</label>
+        <input type='username' class='form-control' id='signup-username' />
+        <div class='mb-3'>
+          <label for='email' class='form-label'>Email address</label>
+          <input
+            type='email'
+            class='form-control'
+            id='signup-email'
+            aria-describedby='emailHelp'
+          />
+        </div>
+        <div class='mb-3'>
+          <label for='password' class='form-label'>Password</label>
+          <input type='password' class='form-control' id='signup-password' />
+        </div>
+        <button type='submit' class='btn btn-primary signup-btn'>Sign Up</button>
+      </div>
     </div>
-    <div class='mb-3'>
-      <label for='password' class='form-label'>Password</label>
-      <input type='password' class='form-control' id='signup-password' />
-    </div>
-    <button type='submit' class='btn btn-primary signup-btn'>Sign Up</button>
   </div>
 </form>
 <script src='/javascript/login.js'></script>
