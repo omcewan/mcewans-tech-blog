@@ -22,14 +22,19 @@ body {
   height: 100;
 }
 
+.navbar-brand {
+  margin: 0 30px;
+}
+
 .navbar-brand h1 {
   font-size: xxx-large;
-  /* color: var(--primary) */
   color: floralwhite;
 }
 
 .nav-link {
   font-size: x-large;
+  color: floralwhite;
+  margin: 0 10px;
 }
 
 main {
@@ -49,15 +54,26 @@ ol {
   background: cornflowerblue;
 } */
 
+.login-form,
+.signup-form {
+  width: 500px;
+}
+
 .card-header:first-child {
   background: cornflowerblue;
   border-radius: 10px 10px 0 0;
 }
 
-.card-header a {
+.card-header a,
+.title {
   color: floralwhite;
   font-size: x-large;
   text-decoration: none;
+}
+
+.card-header a p,
+p {
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .card-body {
@@ -76,6 +92,15 @@ ol {
   background: none;
 }
 
+.mb-3 label {
+  font-size: large;
+}
+
 #logout {
   margin-top: 2px;
+}
+
+.login-btn,
+.signup-btn {
+  font-size: large;
 }
