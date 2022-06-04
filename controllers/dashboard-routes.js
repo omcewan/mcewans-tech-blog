@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequlize = require('../config/connection');
 const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
+const helpers = require('../utils/helpers');
 
 router.get('/', withAuth, (req, res) => {
   Post.findAll({
@@ -12,7 +13,10 @@ router.get('/', withAuth, (req, res) => {
   })
     .then((userData) => {
       const posts = userData.map((post) => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      const username = helpers.format_username(
+        userData[0].dataValues.user.dataValues.username
+      );
+      res.render('dashboard', { posts, username, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

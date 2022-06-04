@@ -37,10 +37,6 @@ body {
   margin: 0 10px;
 }
 
-main {
-  margin: 20px 0 0 0;
-}
-
 ol {
   list-style: none;
   display: flex;
@@ -48,6 +44,12 @@ ol {
   flex-flow: column wrap;
   margin: 0 50px;
   padding: 0px;
+}
+
+.col h2,
+#post-form h2 {
+  font-size: xx-large;
+  color: floralwhite;
 }
 
 /* .card-header {
@@ -97,10 +99,19 @@ p {
 }
 
 #logout {
-  margin-top: 2px;
+  margin: 10px;
 }
 
 .login-btn,
 .signup-btn {
   font-size: large;
+}
+
+#post-form {
+  height: max-content;
+  margin: 50px 0 0 50px;
+}
+
+.col {
+  margin-top: 50px;
 }

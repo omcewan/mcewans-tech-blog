@@ -1,18 +1,22 @@
 <div class='row'>
-  <form class='col-3' id='post-form'>
-    <h2>New Post</h2>
-    <div class='mb-3'>
-      <label for='postTitle' class='form-label'>Title</label>
-      <input type='input' class='form-control' id='post-title' />
+  <form class='card col-4' id='post-form'>
+    <div class='card-header'>
+      <p class='title'>New Post</p>
     </div>
-    <div class='mb-3'>
-      <label for='postContents' class='form-label'> Post Contents</label>
-      <textarea class='form-control' id='post-contents' rows='3'></textarea>
+    <div class='card-body'>
+      <div class='mb-3'>
+        <label for='postTitle' class='form-label'>Title</label>
+        <input type='input' class='form-control' id='post-title' />
+      </div>
+      <div class='mb-3'>
+        <label for='postContents' class='form-label'> Post Contents</label>
+        <textarea class='form-control' id='post-contents' rows='3'></textarea>
+      </div>
+      <button type='submit' class='btn btn-primary' id='post-btn'>Add Post</button>
     </div>
-    <button type='submit' class='btn btn-primary' id='post-btn'>Add Post</button>
   </form>
   <ol class='col'>
-    <h2>Your Posts</h2>
+    <h2>{{username}}'s Post(s)</h2>
     <li>
       {{#each posts}}
         <div class='card'>
