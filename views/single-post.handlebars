@@ -1,12 +1,14 @@
-<div class='card'>
-  <div class='card-header'>
-    <p class='title'>Title: {{post.title}}</p>
+<ol>
+  <div class='card'>
+    <div class='card-header'>
+      <p class='title'>Title: {{post.title}}</p>
+    </div>
+    <div class='card-body'>
+      <p class='posted-by'>Posted By:
+        {{format_username post.user.username}}
+        on
+        {{post.createdAt}}</p>
+      <p class='card-text'>{{post.post_contents}}</p>
+    </div>
   </div>
-  <div class='card-body'>
-    <p class='posted-by'>Posted By:
-      {{post.user.username}}
-      on
-      {{post.createdAt}}</p>
-    <p class='card-text'>{{post.post_contents}}</p>
-  </div>
-</div>
+</ol>
