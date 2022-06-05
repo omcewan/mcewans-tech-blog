@@ -29,6 +29,22 @@
               on
               {{createdAt}}</p>
             <p class='card-text'>{{post_contents}}</p>
+            <div class='delete-edit'>
+              <button
+                value='{{id}}'
+                type='button'
+                class='btn btn-light edit-btn'
+              >
+                <i class='fa-solid fa-pencil'></i>
+              </button>
+              <button
+                value='{{id}}'
+                type='button'
+                class='btn btn-light delete-btn'
+              >
+                <i class='fa-solid fa-trash-can'></i>
+              </button>
+            </div>
           </div>
         </div>
       {{/each}}
@@ -36,3 +52,4 @@
   </ol>
 </div>
 <script src='/javascript/add-post.js'></script>
+<script src='/javascript/delete-post.js'></script>

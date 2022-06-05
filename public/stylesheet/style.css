@@ -94,6 +94,16 @@ p {
   background: none;
 }
 
+.delete-edit {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: end;
+}
+
+.delete-edit button {
+  margin: 2px;
+}
+
 .mb-3 label {
   font-size: large;
 }

@@ -10,6 +10,7 @@ router.get('/', withAuth, (req, res) => {
     where: { user_id: req.session.user_id },
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
     include: { model: User, attributes: ['username'] },
+    order: [['id', 'DESC']],
   })
     .then((userData) => {
       const posts = userData.map((post) => post.get({ plain: true }));
