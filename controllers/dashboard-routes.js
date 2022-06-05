@@ -14,10 +14,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then((userData) => {
       const posts = userData.map((post) => post.get({ plain: true }));
-      const username = helpers.format_username(
-        userData[0].dataValues.user.dataValues.username
-      );
-      res.render('dashboard', { posts, username, loggedIn: true });
+      res.render('dashboard', { posts, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

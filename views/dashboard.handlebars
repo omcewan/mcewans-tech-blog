@@ -1,4 +1,5 @@
 <div class='row'>
+
   <form class='card col-4' id='post-form'>
     <div class='card-header'>
       <p class='title'>New Post</p>
@@ -16,40 +17,60 @@
     </div>
   </form>
   <ol class='col'>
-    <h2>{{username}}'s Post(s)</h2>
-    <li>
-      {{#each posts}}
-        <div class='card'>
-          <div class='card-header'>
-            <p class='title'>Title: {{title}}</p>
-          </div>
-          <div class='card-body'>
-            <p class='posted-by'>Posted By:
-              {{user.username}}
-              on
-              {{createdAt}}</p>
-            <p class='card-text'>{{post_contents}}</p>
-            <div class='delete-edit'>
-              <button
-                value='{{id}}'
-                type='button'
-                class='btn btn-light edit-btn'
-              >
-                <i class='fa-solid fa-pencil'></i>
-              </button>
-              <button
-                value='{{id}}'
-                type='button'
-                class='btn btn-light delete-btn'
-              >
-                <i class='fa-solid fa-trash-can'></i>
-              </button>
+    {{!-- <h2>{{posts}}'s Post(s)</h2> --}}
+    {{#if posts.length}}
+      <li class='dashboard-posts'>
+        {{#each posts}}
+          <div class='card'>
+            <div class='card-header'>
+              <p class='title'>Title: {{title}}</p>
+            </div>
+            <div class='card-body'>
+              <p class='posted-by'>Posted By:
+                {{format_username user.username}}
+                on
+                {{createdAt}}</p>
+              <p class='card-text'>{{post_contents}}</p>
+              <div class='delete-edit'>
+                <button
+                  data-id='{{id}}'
+                  type='button'
+                  class='btn btn-primary edit-btn'
+                >
+                  <i class='fa-solid fa-pencil'></i>
+                </button>
+                <button
+                  data-delete-id='{{id}}'
+                  type='button'
+                  class='btn btn-primary delete-btn'
+                >
+                  {{id}}
+                  <i class='fa-solid fa-trash-can'></i>
+                </button>
+              </div>
             </div>
           </div>
+        {{/each}}
+      </li>
+    {{else}}
+      <div class='card dashboard-posts'>
+        <div class='card-header'>
+          <p class='title'>Title: Your First Post!</p>
         </div>
-      {{/each}}
-    </li>
+        <div class='card-body'>
+          <p class='posted-by'>Posted By: Admin </p>
+          <p class='card-text'>Join the conversation and add your first post. To
+            do this use the form on the right and a title and the contents of
+            your post and finish by hitting thr add post button. Your new post
+            will show up here in desecending order. You will be able to delete
+            and edit posts once posted. So get posting today!</p>
+          <div class='delete-edit'>
+          </div>
+        </div>
+      </div>
+    {{/if}}
   </ol>
 </div>
+
 <script src='/javascript/add-post.js'></script>
 <script src='/javascript/delete-post.js'></script>

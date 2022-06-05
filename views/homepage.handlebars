@@ -1,17 +1,37 @@
 <ol>
-  <li>
-    {{#each posts}}
-      <div class='card'>
-        <div class='card-header'>
-          <a href='/post/{{id}}'>
-            <p class='title'>Title: {{title}}</p>
-          </a>
+  {{#if posts.length}}
+    <li>
+      {{#each posts}}
+        <div class='card'>
+          <div class='card-header'>
+            <a href='/post/{{id}}'>
+              <p class='title'>Title: {{title}}</p>
+            </a>
+          </div>
+          <div class='card-body'>
+            <p class='posted-by'>Posted By:
+              {{format_username user.username}}
+              on
+              {{createdAt}}</p>
+            <p class='card-text'>{{post_contents}}</p>
+          </div>
         </div>
-        <div class='card-body'>
-          <p class='posted-by'>Posted By: {{user.username}} on {{createdAt}}</p>
-          <p class='card-text'>{{post_contents}}</p>
+      {{/each}}
+    </li>
+  {{else}}
+    <div class='card dashboard-posts'>
+      <div class='card-header'>
+        <p class='title'>Title: Wow its like a Ghost Town!</p>
+      </div>
+      <div class='card-body'>
+        <p class='posted-by'>Posted By: Admin </p>
+        <p class='card-text'>Join the conversation and be the first to post. If
+          your aren't signed up yet, click the sign in link in the navigation
+          bar and either sign in or sign up once there go ahead and add your
+          first post.So why wait? Get posting today!</p>
+        <div class='delete-edit'>
         </div>
       </div>
-    {{/each}}
-  </li>
+    </div>
+  {{/if}}
 </ol>
