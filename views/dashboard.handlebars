@@ -1,5 +1,4 @@
 <div class='row'>
-
   <form class='card col-4' id='post-form'>
     <div class='card-header'>
       <p class='title'>New Post</p>
@@ -34,20 +33,10 @@
                 {{createdAt}}</p>
               <p class='card-text'>{{post_contents}}</p>
               <div class='delete-edit'>
-                <button
-                  data-id='{{id}}'
-                  type='button'
-                  class='btn btn-primary edit-btn'
-                >
-                  <i class='fa-solid fa-pencil'></i>
-                </button>
-                <button
-                  data-delete-id='{{id}}'
-                  type='button'
-                  class='btn btn-primary delete-btn'
-                >
-                  {{id}}
-                  <i class='fa-solid fa-trash-can'></i>
+                <button type='button' class='btn btn-primary edit-btn'>
+                  <a href='/dashboard/edit/{{id}}'>
+                    <i class='fa-solid fa-pencil'></i>
+                  </a>
                 </button>
               </div>
             </div>
@@ -73,6 +62,4 @@
     {{/if}}
   </ol>
 </div>
-
 <script src='/javascript/add-post.js'></script>
-{{!-- <script src='/javascript/delete-post.js'></script> --}}

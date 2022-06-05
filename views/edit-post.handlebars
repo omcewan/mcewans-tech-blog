@@ -1,0 +1,50 @@
+<div class='row'>
+  <form class='card col-4' id='post-form'>
+    <div class='card-header'>
+      <p class='title'>Update Post</p>
+    </div>
+    <div class='card-body'>
+      <div class='mb-3'>
+        <label for='postTitle' class='form-label'>Updated Title</label>
+        <input
+          type='input'
+          class='form-control'
+          id='post-title'
+          placeholder='{{post.title}}'
+        />
+      </div>
+      <div class='mb-3'>
+        <label for='postContents' class='form-label'>
+          Updated Post Contents</label>
+        <textarea
+          class='form-control'
+          id='post-contents'
+          rows='3'
+          placeholder='{{post.post_contents}}'
+        ></textarea>
+      </div>
+      <button type='submit' class='btn btn-primary' id='update-btn'>
+        <i class='fa-solid fa-pencil'></i>
+      </button>
+      <button type='submit' class='btn btn-primary' id='delete-btn'>
+        <i class='fa-solid fa-trash-can'></i>
+      </button>
+    </div>
+  </form>
+  <ol class='col'>
+    <div class='card'>
+      <div class='card-header'>
+        <p class='title'>Title: {{post.title}}</p>
+      </div>
+      <div class='card-body'>
+        <p class='posted-by'>Posted By:
+          {{format_username post.user.username}}
+          on
+          {{post.createdAt}}</p>
+        <p class='card-text'>{{post.post_contents}}</p>
+      </div>
+    </div>
+  </ol>
+</div>
+<script src='/javascript/delete-post.js'></script>
+<script src='/javascript/update-post.js'></script>

@@ -3,9 +3,12 @@ async function deletePostHandler(event) {
 
   let location = window.location.href.split('/');
   const id = location[location.length - 1];
+  const title = document.getElementById('post-title').value.trim();
+  const post_contents = document.getElementById('post-contents').value.trim();
 
   const response = await fetch(`/api/posts/${id}`, {
-    method: 'delete',
+    method: 'put',
+    body: JSON.stringify({ title, post_contents }),
     headers: { 'Content-Type': 'application/json' },
   });
 
@@ -17,5 +20,5 @@ async function deletePostHandler(event) {
 }
 
 document
-  .querySelector('#delete-btn')
+  .querySelector('#update-btn')
   .addEventListener('click', deletePostHandler);
