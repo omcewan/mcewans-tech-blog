@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment} = require('../../models');
+const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
   Post.findAll({
-    include: {
+    include:[ {
       model: User,
       attributes: { exclude: ['password'] },
-    },
+    }, {model: Comment}],
   })
     .then((postData) => {
       res.json(postData);
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: { id: req.params.id },
-    include: { model: User, attributes: { exclude: ['password'] } },
+    include: [{ model: User, attributes: { exclude: ['password'] } }, {model: Comment}],
   }).then((postData) => {
     if (!postData) {
       res.status(400).json({ message: 'No Post found with that ID!' });
@@ -30,7 +31,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     post_contents: req.body.post_contents,
@@ -45,7 +46,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Post.update(req.body, { where: { id: req.params.id } })
     .then((updatedPostData) => {
       if (!updatedPostData[0]) {
@@ -60,7 +61,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id,
