@@ -88,7 +88,8 @@ p {
   justify-content: end;
 }
 
-.edit-btn a, #back-btn a {
+.edit-btn a,
+#back-btn a {
   text-decoration: none;
   color: white;
 }
@@ -129,4 +130,22 @@ p {
 
 .comment:nth-child(odd) {
   background-color: floralwhite;
+}
+
+#comment-btn {
+  margin: 10px 0 0 0;
+}
+
+.comment-header {
+  margin: 0 0 10px 0;
+}
+
+@media screen and (max-width: 625px) {
+  .navbar {
+    height: max-content;
+  }
+
+  .navbar-brand {
+    margin: 0;
+  }
 }

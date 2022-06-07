@@ -12,7 +12,7 @@
       <ol class='comment-list'>
         <div class='card'>
           <div class='card-header'>
-            <h3>Post Comment(s)</h3>
+            <h3>Comment(s)</h3>
           </div>
         </div>
         {{#if post.comments.length}}
@@ -26,11 +26,33 @@
           </li>
         {{else}}
           <div class='comment'>
-            <p>This Post has no comments yet! Be the first to comment by signing
+            <p>This post has no comments yet! Be the first to comment by signing
               in and leaving a comment!</p>
+          </div>
+        {{/if}}
+        {{#if loggedIn}}
+          <div class='card'>
+            <div>
+              <div class='card-header comment-header'>
+                <h3>Post A Comment</h3>
+              </div>
+              <textarea
+                class='form-control'
+                id='post-comments'
+                rows='3'
+              ></textarea>
+              <button
+                type='submit'
+                class='btn btn-primary'
+                id='comment-btn'
+              >Post Comment</button>
+            </div>
           </div>
         {{/if}}
       </ol>
     </div>
   </div>
 </ol>
+{{#if loggedIn}}
+  <script src='/javascript/add-comment.js'></script>
+{{/if}}
