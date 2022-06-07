@@ -1,72 +1,68 @@
-const { Post } = require('../models');
-// const sequelize = require('../config/connection');
+const { Comment } = require('../models');
 
-const postData = [
+const commentData = [
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_contents:
-      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
-    user_id: 3,
-  },
-  {
-    title: 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',
-    post_contents:
+    comment_contents:
       'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
     user_id: 1,
+    post_id: 1,
   },
   {
-    title: 'Donec dapibus.',
-    post_contents:
-      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
-    user_id: 1,
-  },
-  {
-    title: 'Nulla tellus.',
-    post_contents:
-      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
-    user_id: 3,
-  },
-  {
-    title:
-      'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
-    post_contents:
-      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
-    user_id: 3,
-  },
-  {
-    title:
-      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
-    post_contents:
+    comment_contents:
       'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
     user_id: 2,
+    post_id: 2,
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_contents:
-      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
-    user_id: 4,
-  },
-  {
-    title: 'Etiam justo.',
-    post_contents:
-      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
-    user_id: 4,
-  },
-  {
-    title: 'Nulla ut erat id mauris vulputate elementum.',
-    post_contents:
+    comment_contents:
       'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
     user_id: 3,
+    post_id: 3,
   },
   {
-    title:
-      'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-    post_contents:
+    comment_contents:
+      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
+    user_id: 4,
+    post_id: 4,
+  },
+  {
+    comment_contents:
       'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
     user_id: 5,
+    post_id: 5,
+  },
+  {
+    comment_contents:
+      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
+    user_id: 1,
+    post_id: 6,
+  },
+  {
+    comment_contents:
+      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
+    user_id: 2,
+    post_id: 7,
+  },
+  {
+    comment_contents:
+      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
+    user_id: 3,
+    post_id: 8,
+  },
+  {
+    comment_contents:
+      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
+    user_id: 4,
+    post_id: 9,
+  },
+  {
+    comment_contents:
+      'nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget',
+    user_id: 5,
+    post_id: 10,
   },
 ];
 
-const seedPosts = () => Post.bulkCreate(postData);
+const seedComments = () => Comment.bulkCreate(commentData);
 
-module.exports = seedPosts;
+module.exports = seedComments;
