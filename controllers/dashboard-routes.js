@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const res = require('express/lib/response');
 const sequlize = require('../config/connection');
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
@@ -18,7 +18,7 @@ router.get('/', withAuth, (req, res) => {
     // use the ID from the session
     where: { user_id: req.session.user_id },
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
-    include: { model: User, attributes: ['username'] },
+    include:[ { model: User, attributes: ['username'] }, {model: Comment}],
     order: [['id', 'DESC']],
   })
     .then((userData) => {
@@ -35,10 +35,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: { id: req.params.id },
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
-    include: { model: User, attributes: ['username'] },
+    include: [{ model: User, attributes: ['username'] }, {model: Comment, include: { model: User, attributes: ['username'] }}],
   })
     .then((postData) => {
-      console.log(postData);
+      // console.log(postData);
       if (!postData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;

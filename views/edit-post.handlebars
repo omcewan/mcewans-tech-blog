@@ -1,5 +1,5 @@
-<section class='row'>
-  <form class='card col-4' id='post-form'>
+<section class='row justify-content-between'>
+  <form class='card col-6' id='post-form'>
     <div class='card-header'>
       <p class='title'>Update Post</p>
     </div>
@@ -47,6 +47,28 @@
           on
           {{formatDate post.createdAt}}</p>
         <p class='card-text'>{{post.post_contents}}</p>
+        <ol class='comment-list'>
+          <div class='card'>
+            <div class='card-header'>
+              <h3>Post Comment(s)</h3>
+            </div>
+          </div>
+          {{#if post.comments.length}}
+            <li>
+              {{#each post.comments}}
+                <div class='comment card-body'>
+                  <p>{{comment_contents}}</p>
+                  <p>Commented By: {{format_username user.username}}</p>
+                </div>
+              {{/each}}
+            </li>
+          {{else}}
+            <div class='comment'>
+              <p>This Post has no comments yet! Be the first to comment by
+                signing in and leaving a comment!</p>
+            </div>
+          {{/if}}
+        </ol>
       </div>
     </div>
   </ol>

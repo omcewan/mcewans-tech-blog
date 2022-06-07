@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequlize = require('../config/connection');
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
-    include: { model: User, attributes: ['username'] },
+    include: [{ model: User, attributes: ['username'] }, { model: Comment }],
     order: [['id', 'DESC']],
   }).then((postData) => {
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -25,7 +25,10 @@ router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: { id: req.params.id },
     attributes: ['id', 'title', 'post_contents', 'createdAt'],
-    include: { model: User, attributes: ['username'] },
+    include: [
+      { model: User, attributes: ['username'] },
+      { model: Comment, include: { model: User, attributes: ['username'] } },
+    ],
   })
     .then((postData) => {
       if (!postData) {
@@ -35,6 +38,7 @@ router.get('/post/:id', (req, res) => {
 
       // serialize the data
       const post = postData.get({ plain: true });
+      // console.log(post);
 
       // pass data to template
       res.render('single-post', {

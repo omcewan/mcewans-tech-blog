@@ -1,5 +1,5 @@
-<section class='row'>
-  <form class='card col-4' id='post-form'>
+<section class='row ustify-content-between'>
+  <form class='card col-6' id='post-form'>
     <div class='card-header'>
       <p class='title'>New Post</p>
     </div>
@@ -32,6 +32,7 @@
                 on
                 {{formatDate createdAt}}</p>
               <p class='card-text'>{{post_contents}}</p>
+              <h5 class='card-text'>{{comments.length}} Comment(s)</h5>
               <div class='delete-edit'>
                 <button type='button' class='btn btn-primary edit-btn'>
                   <a href='/dashboard/edit/{{id}}'>

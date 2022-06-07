@@ -110,3 +110,23 @@ p {
   height: max-content;
   margin: 0 0 0 50px;
 }
+
+/* .comment-list {
+  border: solid cornflowerblue;
+  border-radius: 10px;
+  padding: 10px;
+} */
+
+.comment-list .card-header {
+  border: solid cornflowerblue;
+  border-radius: 10px;
+}
+
+.comment {
+  padding: 0 0 0 10px;
+  border-radius: 10px;
+}
+
+.comment:nth-child(odd) {
+  background-color: floralwhite;
+}
